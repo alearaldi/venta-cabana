@@ -1,23 +1,34 @@
-// Función para mostrar imágenes al hacer scroll
+// 1. Lógica para aparecer fotos al hacer scroll (ya la tenías)
 const revealImages = () => {
     const images = document.querySelectorAll('.gallery img');
-    
     images.forEach(img => {
         const rect = img.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-        // Si la imagen entra en el campo de visión
-        if (rect.top < windowHeight - 100) {
+        if (rect.top < window.innerHeight - 100) {
             img.style.opacity = "1";
             img.style.transform = "translateY(0)";
         }
     });
 };
 
-// Escuchar el evento de scroll
+// 2. Lógica para el Lightbox (Click para ampliar)
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("imgFull");
+const closeModal = document.querySelector(".close-modal");
+
+// Delegación de eventos para las fotos de la galería
+document.querySelector('.gallery').addEventListener('click', (e) => {
+    if (e.target.tagName === 'IMG') {
+        modal.style.display = "block";
+        modalImg.src = e.target.src; // Copia la ruta de la imagen clickeada
+    }
+});
+
+// Cerrar al hacer clic en la (X) o fuera de la imagen
+closeModal.onclick = () => modal.style.display = "none";
+modal.onclick = (e) => {
+    if (e.target !== modalImg) modal.style.display = "none";
+};
+
+// Listeners
 window.addEventListener('scroll', revealImages);
-
-// Ejecutar una vez al cargar para mostrar las primeras fotos
 window.addEventListener('load', revealImages);
-
-console.log("Sitio listo: Nombres sincronizados y galería activada.");
