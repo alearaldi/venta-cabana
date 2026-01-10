@@ -15,8 +15,8 @@ header {
 .main-price { font-size: 2.5rem; font-weight: bold; color: #f1c40f; margin-bottom: 20px; }
 
 /* Botones */
-.btn-main { padding: 15px 30px; background: #bc6c25; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; display: inline-block; }
-.btn-main:hover { background: #dda15e; }
+.btn-main { padding: 15px 30px; background: #bc258b; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; display: inline-block; }
+.btn-main:hover { background: #9527a8; }
 
 /* Contenedor principal */
 .container { max-width: 1100px; margin: 40px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
@@ -47,7 +47,7 @@ header {
 .video-item { background: #eee; padding: 15px; border-radius: 8px; text-align: center; }
 .video-item video { width: 100%; border-radius: 5px; }
 
-footer { padding: 60px 20px; background: #283618; color: white; text-align: center; margin-top: 50px; }
+footer { padding: 60px 20px; background: #1b1b1b; color: white; text-align: center; margin-top: 50px; }
 
 /* Estilos para el Lightbox (Imagen ampliada) */
 .modal {
